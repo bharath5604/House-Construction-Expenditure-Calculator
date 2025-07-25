@@ -221,12 +221,12 @@ function App() {
                             <thead>
                               <tr className="border-b border-white/20">
                                 <th className="text-left py-4 px-3 text-sm font-bold text-cyan-200">Item Name</th>
-                                <th className="text-left py-4 px-3 text-sm font-bold text-cyan-200 w-20">Length</th>
-                                <th className="text-left py-4 px-3 text-sm font-bold text-cyan-200 w-20">Width</th>
-                                <th className="text-left py-4 px-3 text-sm font-bold text-cyan-200 w-20">Area</th>
-                                <th className="text-left py-4 px-3 text-sm font-bold text-cyan-200 w-20">Qty</th>
-                                <th className="text-left py-4 px-3 text-sm font-bold text-cyan-200 w-24">Price/sq.ft</th>
-                                <th className="text-left py-4 px-3 text-sm font-bold text-cyan-200 w-28">Total (₹)</th>
+                                <th className="text-left py-4 px-3 text-sm font-bold text-cyan-200 w-24">Length</th>
+                                <th className="text-left py-4 px-3 text-sm font-bold text-cyan-200 w-24">Width</th>
+                                <th className="text-left py-4 px-3 text-sm font-bold text-cyan-200 w-28">Area</th>
+                                <th className="text-left py-4 px-3 text-sm font-bold text-cyan-200 w-24">Qty</th>
+                                <th className="text-left py-4 px-3 text-sm font-bold text-cyan-200 w-32">Price/sq.ft</th>
+                                <th className="text-left py-4 px-3 text-sm font-bold text-cyan-200 w-32">Total (₹)</th>
                                 <th className="w-12"></th>
                               </tr>
                             </thead>
@@ -248,7 +248,7 @@ function App() {
                                       value={item.length}
                                       onChange={(e) => updateConstructionItem(room.id, item.id, 'length', parseFloat(e.target.value) || 0)}
                                       min="0"
-                                      step="0.1"
+                                      step="1"
                                       placeholder="ft"
                                       className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400"
                                     />
@@ -259,7 +259,7 @@ function App() {
                                       value={item.width}
                                       onChange={(e) => updateConstructionItem(room.id, item.id, 'width', parseFloat(e.target.value) || 0)}
                                       min="0"
-                                      step="0.1"
+                                      step="1"
                                       placeholder="ft"
                                       className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400"
                                     />
@@ -275,6 +275,7 @@ function App() {
                                       value={item.quantity}
                                       onChange={(e) => updateConstructionItem(room.id, item.id, 'quantity', parseInt(e.target.value) || 0)}
                                       min="1"
+                                      step="1"
                                       className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400"
                                     />
                                   </td>
