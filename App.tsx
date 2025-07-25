@@ -250,7 +250,7 @@ function App() {
                                       min="0"
                                       step="0.1"
                                       placeholder="ft"
-                                      className="w-full px-4 py-2 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400"
+                                      className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400"
                                     />
                                   </td>
                                   <td className="py-4 px-3">
@@ -261,7 +261,7 @@ function App() {
                                       min="0"
                                       step="0.1"
                                       placeholder="ft"
-                                      className="w-full px-4 py-2 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400"
+                                      className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400"
                                     />
                                   </td>
                                   <td className="py-4 px-3">
@@ -275,7 +275,7 @@ function App() {
                                       value={item.quantity}
                                       onChange={(e) => updateConstructionItem(room.id, item.id, 'quantity', parseInt(e.target.value) || 0)}
                                       min="1"
-                                      className="w-full px-4 py-2 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400"
+                                      className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400"
                                     />
                                   </td>
                                   <td className="py-4 px-3">
@@ -286,7 +286,7 @@ function App() {
                                       min="0"
                                       step="0.01"
                                       placeholder="₹"
-                                      className="w-full px-4 py-2 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400"
+                                      className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400"
                                     />
                                   </td>
                                   <td className="py-4 px-3">
