@@ -217,7 +217,7 @@ function App() {
                     ) : (
                       <>
                         <div className="overflow-x-auto">
-                          <table className="w-full backdrop-blur-sm">
+                          <table className="w-full">
                             <thead>
                               <tr className="border-b border-white/20">
                                 <th className="text-left py-4 px-3 text-sm font-bold text-cyan-200">Item Name</th>
@@ -238,8 +238,8 @@ function App() {
                                       type="text"
                                       value={item.name}
                                       onChange={(e) => updateConstructionItem(room.id, item.id, 'name', e.target.value)}
-                                      placeholder="e.g., Tiles, Paint, Flooring"
-                                      className="w-full px-4 py-2 bg-slate-900/70 border border-slate-500/80 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:bg-slate-800 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400 backdrop-blur-sm"
+                                      placeholder="e.g., Tiles, Paint"
+                                      className="w-full px-4 py-2 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400"
                                     />
                                   </td>
                                   <td className="py-4 px-3">
@@ -250,7 +250,7 @@ function App() {
                                       min="0"
                                       step="0.1"
                                       placeholder="ft"
-                                      className="w-full px-4 py-2 bg-slate-900/70 border border-slate-500/80 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:bg-slate-800 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400 backdrop-blur-sm"
+                                      className="w-full px-4 py-2 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400"
                                     />
                                   </td>
                                   <td className="py-4 px-3">
@@ -261,11 +261,11 @@ function App() {
                                       min="0"
                                       step="0.1"
                                       placeholder="ft"
-                                      className="w-full px-4 py-2 bg-slate-900/70 border border-slate-500/80 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:bg-slate-800 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400 backdrop-blur-sm"
+                                      className="w-full px-4 py-2 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400"
                                     />
                                   </td>
                                   <td className="py-4 px-3">
-                                    <span className="text-sm font-bold text-cyan-300 bg-cyan-500/20 px-3 py-1 rounded-lg backdrop-blur-sm">
+                                    <span className="text-sm font-bold text-cyan-300 bg-cyan-500/20 px-3 py-1 rounded-lg">
                                       {(item.length * item.width).toFixed(1)} sq.ft
                                     </span>
                                   </td>
@@ -275,7 +275,7 @@ function App() {
                                       value={item.quantity}
                                       onChange={(e) => updateConstructionItem(room.id, item.id, 'quantity', parseInt(e.target.value) || 0)}
                                       min="1"
-                                      className="w-full px-4 py-2 bg-slate-900/70 border border-slate-500/80 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:bg-slate-800 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400 backdrop-blur-sm"
+                                      className="w-full px-4 py-2 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400"
                                     />
                                   </td>
                                   <td className="py-4 px-3">
@@ -286,7 +286,7 @@ function App() {
                                       min="0"
                                       step="0.01"
                                       placeholder="₹"
-                                      className="w-full px-4 py-2 bg-slate-900/70 border border-slate-500/80 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:bg-slate-800 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400 backdrop-blur-sm"
+                                      className="w-full px-4 py-2 bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-slate-400"
                                     />
                                   </td>
                                   <td className="py-4 px-3">
@@ -377,7 +377,7 @@ function App() {
                             min="0"
                             max="100"
                             step="0.1"
-                            className="w-16 px-3 py-2 text-sm bg-slate-900/70 border border-slate-500/80 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:bg-slate-800 focus:border-cyan-400 outline-none text-white backdrop-blur-sm"
+                            className="w-16 px-3 py-2 text-sm bg-slate-800 border border-slate-600 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none text-white"
                           />
                           <span className="text-cyan-200/70">%</span>
                         </div>
