@@ -1,0 +1,697 @@
+/* Holographic House Animation Styles */
+.holographic-house-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  perspective: 1200px;
+  overflow: hidden;
+  background: radial-gradient(circle at center, rgba(0, 100, 255, 0.1) 0%, transparent 70%);
+}
+
+.holographic-house {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotateBuilding 30s linear infinite;
+}
+
+@keyframes rotateBuilding {
+  0% { transform: rotateX(15deg) rotateY(0deg) rotateZ(0deg); }
+  25% { transform: rotateX(20deg) rotateY(90deg) rotateZ(2deg); }
+  50% { transform: rotateX(15deg) rotateY(180deg) rotateZ(0deg); }
+  75% { transform: rotateX(20deg) rotateY(270deg) rotateZ(-2deg); }
+  100% { transform: rotateX(15deg) rotateY(360deg) rotateZ(0deg); }
+}
+
+/* Grid Foundation */
+.grid-foundation {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+  transform-style: preserve-3d;
+  transform: translateX(-50%) rotateX(90deg);
+}
+
+.grid-line-foundation {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, #00d4ff, #0099cc, #00d4ff, transparent);
+  box-shadow: 0 0 10px #00d4ff;
+  animation: gridPulse 6s ease-in-out infinite;
+}
+
+.grid-line-foundation.horizontal {
+  width: 100%;
+  height: 2px;
+}
+
+.grid-line-foundation.vertical {
+  width: 2px;
+  height: 100%;
+}
+
+/* Building Structure */
+.building-structure {
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 360px;
+  transform-style: preserve-3d;
+}
+
+/* Building Floors */
+.building-floor {
+  position: absolute;
+  left: 0;
+  width: 300px;
+  height: 60px;
+  transform-style: preserve-3d;
+}
+
+.ground-floor {
+  bottom: 0px;
+}
+
+.second-floor {
+  bottom: 60px;
+}
+
+.third-floor {
+  bottom: 120px;
+}
+
+.fourth-floor {
+  bottom: 180px;
+}
+
+.fifth-floor {
+  bottom: 240px;
+}
+
+.sixth-floor {
+  bottom: 300px;
+}
+
+.floor-wall {
+  position: absolute;
+  border: 2px solid #00d4ff;
+  background: rgba(0, 100, 255, 0.02);
+  box-shadow: 
+    inset 0 0 20px rgba(0, 212, 255, 0.15),
+    0 0 20px rgba(0, 212, 255, 0.3),
+    0 0 40px rgba(0, 212, 255, 0.1);
+  animation: buildingGlow 8s ease-in-out infinite;
+}
+
+@keyframes buildingGlow {
+  0%, 100% { 
+    border-color: #00d4ff;
+    box-shadow: 
+      inset 0 0 20px rgba(0, 212, 255, 0.15),
+      0 0 20px rgba(0, 212, 255, 0.3),
+      0 0 40px rgba(0, 212, 255, 0.1);
+  }
+  50% { 
+    border-color: #0099ff;
+    box-shadow: 
+      inset 0 0 30px rgba(0, 153, 255, 0.25),
+      0 0 30px rgba(0, 153, 255, 0.4),
+      0 0 60px rgba(0, 153, 255, 0.2);
+  }
+}
+
+.floor-wall.front {
+  width: 300px;
+  height: 60px;
+  transform: translateZ(150px);
+}
+
+.floor-wall.back {
+  width: 300px;
+  height: 60px;
+  transform: translateZ(-150px) rotateY(180deg);
+}
+
+.floor-wall.left {
+  width: 300px;
+  height: 60px;
+  transform: rotateY(-90deg) translateZ(150px);
+}
+
+.floor-wall.right {
+  width: 300px;
+  height: 60px;
+  transform: rotateY(90deg) translateZ(150px);
+}
+
+/* Window Rows */
+.window-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  padding: 8px 15px;
+}
+
+/* Windows */
+.window {
+  width: 25px;
+  height: 35px;
+  border: 2px solid #00d4ff;
+  background: linear-gradient(45deg, rgba(0, 212, 255, 0.1), rgba(0, 100, 255, 0.05));
+  box-shadow: 
+    inset 0 0 15px rgba(0, 212, 255, 0.2),
+    0 0 15px rgba(0, 212, 255, 0.4),
+    0 0 30px rgba(0, 212, 255, 0.2);
+  animation: windowGlow 4s ease-in-out infinite;
+  position: relative;
+}
+
+.window::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 100%;
+  background: #00d4ff;
+  box-shadow: 0 0 5px #00d4ff;
+}
+
+.window::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 1px;
+  background: #00d4ff;
+  box-shadow: 0 0 5px #00d4ff;
+}
+
+@keyframes windowGlow {
+  0%, 100% { 
+    border-color: #00d4ff;
+    box-shadow: 
+      inset 0 0 15px rgba(0, 212, 255, 0.2),
+      0 0 15px rgba(0, 212, 255, 0.4),
+      0 0 30px rgba(0, 212, 255, 0.2);
+  }
+  50% { 
+    border-color: #0099ff;
+    box-shadow: 
+      inset 0 0 25px rgba(0, 153, 255, 0.3),
+      0 0 25px rgba(0, 153, 255, 0.5),
+      0 0 50px rgba(0, 153, 255, 0.3);
+  }
+}
+
+/* Entrance Area */
+.entrance-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  padding: 5px 15px;
+  gap: 5px;
+}
+
+.entrance-door {
+  width: 35px;
+  height: 50px;
+  border: 3px solid #00d4ff;
+  background: linear-gradient(45deg, rgba(0, 212, 255, 0.15), rgba(0, 100, 255, 0.08));
+  box-shadow: 
+    inset 0 0 20px rgba(0, 212, 255, 0.25),
+    0 0 20px rgba(0, 212, 255, 0.5),
+    0 0 40px rgba(0, 212, 255, 0.3);
+  animation: doorGlow 5s ease-in-out infinite;
+  position: absolute;
+  bottom: 5px;
+}
+
+.entrance-door:nth-child(1) { left: 110px; }
+.entrance-door:nth-child(2) { left: 150px; }
+.entrance-door:nth-child(3) { left: 190px; }
+
+.entrance-door::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 80%;
+  width: 3px;
+  height: 3px;
+  background: #00d4ff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00d4ff;
+}
+
+@keyframes doorGlow {
+  0%, 100% { 
+    border-color: #00d4ff;
+    box-shadow: 
+      inset 0 0 20px rgba(0, 212, 255, 0.25),
+      0 0 20px rgba(0, 212, 255, 0.5),
+      0 0 40px rgba(0, 212, 255, 0.3);
+  }
+  50% { 
+    border-color: #0099ff;
+    box-shadow: 
+      inset 0 0 30px rgba(0, 153, 255, 0.35),
+      0 0 30px rgba(0, 153, 255, 0.6),
+      0 0 60px rgba(0, 153, 255, 0.4);
+  }
+}
+
+/* Building Frame Lines */
+.building-frame {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  height: 360px;
+  transform-style: preserve-3d;
+}
+
+.frame-line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, #00d4ff, #0099cc, #00d4ff, transparent);
+  box-shadow: 
+    0 0 15px rgba(0, 212, 255, 0.4),
+    0 0 30px rgba(0, 212, 255, 0.2);
+  animation: frameGlow 7s ease-in-out infinite;
+}
+
+@keyframes frameGlow {
+  0%, 100% { 
+    opacity: 0.6;
+    box-shadow: 
+      0 0 15px rgba(0, 212, 255, 0.4),
+      0 0 30px rgba(0, 212, 255, 0.2);
+  }
+  50% { 
+    opacity: 1;
+    box-shadow: 
+      0 0 25px rgba(0, 212, 255, 0.6),
+      0 0 50px rgba(0, 212, 255, 0.3);
+  }
+}
+
+/* Vertical frame lines */
+.frame-line.vertical-left {
+  width: 3px;
+  height: 360px;
+  left: 0;
+  bottom: 0;
+  transform: translateZ(150px);
+}
+
+.frame-line.vertical-right {
+  width: 3px;
+  height: 360px;
+  right: 0;
+  bottom: 0;
+  transform: translateZ(150px);
+}
+
+.frame-line.vertical-front-left {
+  width: 3px;
+  height: 360px;
+  left: 0;
+  bottom: 0;
+  transform: translateZ(-150px);
+}
+
+.frame-line.vertical-front-right {
+  width: 3px;
+  height: 360px;
+  right: 0;
+  bottom: 0;
+  transform: translateZ(-150px);
+}
+
+.frame-line.vertical-back-left {
+  width: 3px;
+  height: 360px;
+  left: 0;
+  bottom: 0;
+  transform: rotateY(-90deg) translateZ(150px);
+}
+
+.frame-line.vertical-back-right {
+  width: 3px;
+  height: 360px;
+  right: 0;
+  bottom: 0;
+  transform: rotateY(90deg) translateZ(150px);
+}
+
+/* Horizontal frame lines */
+.frame-line.horizontal-ground {
+  width: 300px;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(150px);
+}
+
+.frame-line.horizontal-second {
+  width: 300px;
+  height: 3px;
+  bottom: 60px;
+  left: 0;
+  transform: translateZ(150px);
+}
+
+.frame-line.horizontal-third {
+  width: 300px;
+  height: 3px;
+  bottom: 120px;
+  left: 0;
+  transform: translateZ(150px);
+}
+
+.frame-line.horizontal-fourth {
+  width: 300px;
+  height: 3px;
+  bottom: 180px;
+  left: 0;
+  transform: translateZ(150px);
+}
+
+.frame-line.horizontal-fifth {
+  width: 300px;
+  height: 3px;
+  bottom: 240px;
+  left: 0;
+  transform: translateZ(150px);
+}
+
+.frame-line.horizontal-sixth {
+  width: 300px;
+  height: 3px;
+  bottom: 300px;
+  left: 0;
+  transform: translateZ(150px);
+}
+
+.frame-line.horizontal-top {
+  width: 300px;
+  height: 3px;
+  bottom: 360px;
+  left: 0;
+  transform: translateZ(150px);
+}
+
+/* Building Rooftop */
+.building-rooftop {
+  position: absolute;
+  bottom: 360px;
+  left: 0;
+  width: 300px;
+  height: 20px;
+  transform-style: preserve-3d;
+}
+
+.rooftop-edge {
+  position: absolute;
+  border: 3px solid #00d4ff;
+  background: linear-gradient(45deg, rgba(0, 212, 255, 0.1), rgba(0, 100, 255, 0.05));
+  box-shadow: 
+    inset 0 0 15px rgba(0, 212, 255, 0.2),
+    0 0 20px rgba(0, 212, 255, 0.4),
+    0 0 40px rgba(0, 212, 255, 0.2);
+  animation: rooftopGlow 6s ease-in-out infinite;
+}
+
+@keyframes rooftopGlow {
+  0%, 100% { 
+    border-color: #00d4ff;
+    box-shadow: 
+      inset 0 0 15px rgba(0, 212, 255, 0.2),
+      0 0 20px rgba(0, 212, 255, 0.4),
+      0 0 40px rgba(0, 212, 255, 0.2);
+  }
+  50% { 
+    border-color: #0099ff;
+    box-shadow: 
+      inset 0 0 25px rgba(0, 153, 255, 0.3),
+      0 0 30px rgba(0, 153, 255, 0.5),
+      0 0 60px rgba(0, 153, 255, 0.3);
+  }
+}
+
+.rooftop-edge.front {
+  width: 300px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  transform: translateZ(150px);
+}
+
+.rooftop-edge.back {
+  width: 300px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  transform: translateZ(-150px);
+}
+
+.rooftop-edge.left {
+  width: 300px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  transform: rotateY(-90deg) translateZ(150px);
+}
+
+.rooftop-edge.right {
+  width: 300px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  transform: rotateY(90deg) translateZ(150px);
+}
+
+.rooftop-corner {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #00d4ff;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 15px #00d4ff,
+    0 0 30px #00d4ff;
+  animation: cornerPulse 3s ease-in-out infinite;
+}
+
+@keyframes cornerPulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 
+      0 0 15px #00d4ff,
+      0 0 30px #00d4ff;
+  }
+  50% { 
+    transform: scale(1.5);
+    box-shadow: 
+      0 0 25px #00d4ff,
+      0 0 50px #00d4ff;
+  }
+}
+
+.rooftop-corner.corner-1 {
+  top: 0;
+  left: 0;
+  transform: translateZ(150px);
+}
+
+.rooftop-corner.corner-2 {
+  top: 0;
+  right: 0;
+  transform: translateZ(150px);
+}
+
+.rooftop-corner.corner-3 {
+  top: 0;
+  left: 0;
+  transform: translateZ(-150px);
+}
+
+.rooftop-corner.corner-4 {
+  top: 0;
+  right: 0;
+  transform: translateZ(-150px);
+}
+
+/* Floating Particles */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #00d4ff;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 15px #00d4ff,
+    0 0 30px #00d4ff;
+  animation: floatParticle 15s ease-in-out infinite;
+}
+
+@keyframes floatParticle {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) scale(0.5);
+    opacity: 0.4;
+  }
+  25% { 
+    transform: translateY(-30px) translateX(10px) scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: translateY(-15px) translateX(-5px) scale(0.8);
+    opacity: 0.8;
+  }
+  75% { 
+    transform: translateY(-40px) translateX(15px) scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+/* Scanning Lines Effect */
+.scan-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.scan-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+  box-shadow: 0 0 20px #00d4ff;
+  animation: scanMove 8s linear infinite;
+}
+
+.scan-line.scan-1 {
+  animation-delay: 0s;
+}
+
+.scan-line.scan-2 {
+  animation-delay: 2.5s;
+}
+
+.scan-line.scan-3 {
+  animation-delay: 5s;
+}
+
+@keyframes scanMove {
+  0% { 
+    top: -10px;
+    opacity: 0;
+  }
+  10% { 
+    opacity: 1;
+  }
+  90% { 
+    opacity: 1;
+  }
+  100% { 
+    top: 110%;
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .holographic-house-container {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .building-structure {
+    width: 220px;
+    height: 280px;
+  }
+  
+  .building-floor {
+    width: 220px;
+    height: 45px;
+  }
+  
+  .floor-wall {
+    height: 45px;
+  }
+  
+  .floor-wall.front, .floor-wall.back {
+    width: 220px;
+  }
+  
+  .floor-wall.left, .floor-wall.right {
+    width: 220px;
+  }
+  
+  .floor-wall.front { transform: translateZ(110px); }
+  .floor-wall.back { transform: translateZ(-110px) rotateY(180deg); }
+  .floor-wall.left { transform: rotateY(-90deg) translateZ(110px); }
+  .floor-wall.right { transform: rotateY(90deg) translateZ(110px); }
+  
+  .ground-floor { bottom: 0px; }
+  .second-floor { bottom: 45px; }
+  .third-floor { bottom: 90px; }
+  .fourth-floor { bottom: 135px; }
+  .fifth-floor { bottom: 180px; }
+  .sixth-floor { bottom: 225px; }
+  
+  .building-rooftop {
+    bottom: 270px;
+    width: 220px;
+  }
+  
+  .rooftop-edge.front, .rooftop-edge.back {
+    width: 220px;
+  }
+  
+  .rooftop-edge.left, .rooftop-edge.right {
+    width: 220px;
+  }
+  
+  .rooftop-edge.front { transform: translateZ(110px); }
+  .rooftop-edge.back { transform: translateZ(-110px); }
+  .rooftop-edge.left { transform: rotateY(-90deg) translateZ(110px); }
+  .rooftop-edge.right { transform: rotateY(90deg) translateZ(110px); }
+  
+  .window {
+    width: 18px;
+    height: 25px;
+  }
+  
+  .entrance-door {
+    width: 25px;
+    height: 35px;
+  }
+  
+  .grid-foundation {
+    width: 300px;
+    height: 300px;
+  }
+}
