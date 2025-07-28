@@ -247,8 +247,8 @@ function App() {
                                       type="number"
                                       value={item.length}
                                       onChange={(e) => updateConstructionItem(room.id, item.id, 'length', parseFloat(e.target.value) || 0)}
-                                      min="0"
-                                      step="0.1"
+                                      required
+                                      step="1"
                                       placeholder="ft"
                                       className="w-full px-4 py-2 bg-white/10 border border-white/30 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-cyan-200/50 backdrop-blur-sm"
                                     />
@@ -258,8 +258,8 @@ function App() {
                                       type="number"
                                       value={item.width}
                                       onChange={(e) => updateConstructionItem(room.id, item.id, 'width', parseFloat(e.target.value) || 0)}
-                                      min="0"
-                                      step="0.1"
+                                      required
+                                      step="1"
                                       placeholder="ft"
                                       className="w-full px-4 py-2 bg-white/10 border border-white/30 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-cyan-200/50 backdrop-blur-sm"
                                     />
@@ -283,8 +283,8 @@ function App() {
                                       type="number"
                                       value={item.price}
                                       onChange={(e) => updateConstructionItem(room.id, item.id, 'price', parseFloat(e.target.value) || 0)}
-                                      min="0"
-                                      step="0.01"
+                                      required
+                                      step="1"
                                       placeholder="₹"
                                       className="w-full px-4 py-2 bg-white/10 border border-white/30 rounded-lg focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 outline-none transition-all duration-200 text-white placeholder-cyan-200/50 backdrop-blur-sm"
                                     />
