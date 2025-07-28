@@ -136,7 +136,7 @@ function App() {
           <div className="max-w-4xl mx-auto text-center px-4">
             <HolographicHouse />
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent mb-6 mt-8">
-              Smart Construction Calculator
+              Construction Calculator
             </h2>
             <p className="text-xl text-cyan-100/80 mb-8 max-w-2xl mx-auto leading-relaxed">
               Plan your dream home with precision. Calculate construction costs room by room with our advanced 3D visualization system.
