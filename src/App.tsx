@@ -233,7 +233,7 @@ function App() {
                             <tbody>
                               {room.items.map((item) => (
                                 <tr key={item.id} className="border-b border-white/10 hover:bg-white/5 transition-all duration-200">
-                                  <td className="py-4 px-3">
+                                  <td className="w-12 py-4 px-3">
                                     <input
                                       type="text"
                                       value={item.name}
